@@ -44,11 +44,6 @@ pipeline {
                     reuseNode true
                 }
             }
-            post {
-                always {
-                junit 'test-results/junit.xml'
-                }
-            }
             steps {
                 sh '''
                     npm install  serve
@@ -62,5 +57,9 @@ pipeline {
         
         }
     }
-
+    post {
+        always {
+            junit 'jest-results/junit.xml'
+        }
+    }
 }
