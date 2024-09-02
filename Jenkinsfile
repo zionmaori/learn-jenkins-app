@@ -28,6 +28,11 @@ pipeline {
             steps {
                 sh '''
                     echo "Test Stage"
+                    if [ ! -f build/index.html ]; then 
+                        echo "file not found!"
+                    else
+                        echo "file found"
+                    fi
                 '''
             }
             
