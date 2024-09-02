@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh 'echo "hello zion"
+                sh 'echo "hello zion"'
+
             }
         }
     }
