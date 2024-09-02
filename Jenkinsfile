@@ -27,6 +27,7 @@ pipeline {
             }
             steps {
                 sh '''
+                ls -la
                     echo "Test Stage"
                     if [ ! -f build/index.html ]; then 
                         echo "file not found!"
