@@ -29,6 +29,9 @@ pipeline {
                     else
                         echo "file found"
                     fi
+                    npm ci
+                    npm test
+
                 '''
             }
             
