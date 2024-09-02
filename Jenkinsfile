@@ -23,17 +23,13 @@ pipeline {
             agent {
                 docker {
                     image 'node:19-alpine'
+                    reuseNode true
                 }
             }
             steps {
                 sh '''
-                ls -la
-                    echo "Test Stage"
-                    if [ ! -f build/index.html ]; then 
-                        echo "file not found!"
-                    else
-                        echo "file found"
-                    fi
+                    ls -la
+                    test -f build/index.html
                     npm ci
                     npm test
 
